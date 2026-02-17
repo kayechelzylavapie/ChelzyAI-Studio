@@ -3,190 +3,256 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Creator Mastery System™</title>
-  <meta name="description" content="Step-by-step AI system for beginners in the Philippines: viral scripts, prompts, digital products, and selling—no tech skills needed."/>
+  <title>ChelzyAI Studio — AI Creator Mastery System™</title>
+  <meta name="description" content="A premium beginner-to-income AI framework with scripts, prompts, and a simple selling system. Pay via GCash or PayPal, then submit proof to get access."/>
   <style>
     :root{
-      --bg:#0b0f19;
-      --card:#11182a;
-      --muted:#98a2b3;
-      --text:#e6e8ee;
-      --accent:#7c5cff;
-      --accent2:#22c55e;
-      --danger:#fb7185;
-      --border:rgba(255,255,255,.10);
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --bg:#070A12;
+      --panel:#0D1222;
+      --panel2:#0A1020;
+      --text:#EAF0FF;
+      --muted:#AAB4D6;
+      --line:rgba(255,255,255,.10);
+      --accent:#7C5CFF;
+      --accent2:#22C55E;
+      --danger:#FB7185;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
       --radius:18px;
-      --max:1100px;
+      --max:1120px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 700px at 15% 10%, rgba(124,92,255,.20), transparent 55%),
-                  radial-gradient(900px 600px at 80% 20%, rgba(34,197,94,.14), transparent 55%),
-                  radial-gradient(800px 600px at 50% 90%, rgba(251,113,133,.10), transparent 55%),
-                  var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
       color:var(--text);
-      line-height:1.5;
+      background:
+        radial-gradient(900px 600px at 15% 10%, rgba(124,92,255,.24), transparent 60%),
+        radial-gradient(850px 520px at 85% 20%, rgba(34,197,94,.16), transparent 58%),
+        radial-gradient(900px 700px at 50% 95%, rgba(251,113,133,.10), transparent 60%),
+        var(--bg);
+      line-height:1.55;
     }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
     .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      position:sticky; top:0; backdrop-filter: blur(12px);
-      background: linear-gradient(to bottom, rgba(11,15,25,.82), rgba(11,15,25,.35));
-      border-bottom:1px solid var(--border);
-      z-index:50;
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(to bottom, rgba(7,10,18,.85), rgba(7,10,18,.35));
+      border-bottom:1px solid var(--line);
     }
-    .brand{display:flex; gap:12px; align-items:center; font-weight:700}
+    .navInner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800;
+      letter-spacing:-.01em;
+    }
     .logo{
-      width:38px; height:38px; border-radius:12px;
+      width:40px;height:40px;border-radius:14px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 10px 30px rgba(124,92,255,.25);
+      box-shadow: 0 12px 36px rgba(124,92,255,.25);
+      flex:0 0 auto;
     }
-    .navlinks{display:flex; gap:16px; align-items:center; color:var(--muted); font-size:14px}
-    .navlinks a{opacity:.9; text-decoration:none}
-    .navlinks a:hover{opacity:1; color:#fff}
+    .brand small{display:block; font-weight:650; color:var(--muted); margin-top:2px}
+    .links{
+      display:flex; gap:16px; align-items:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .links a:hover{color:var(--text)}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px; border-radius:14px;
-      border:1px solid var(--border);
-      text-decoration:none; font-weight:650;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      font-weight:750;
       cursor:pointer;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      gap:10px;
+      white-space:nowrap;
     }
     .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.22)}
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(34,197,94,.95));
+    .btnPrimary{
       border-color: transparent;
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(34,197,94,.95));
       box-shadow: 0 18px 50px rgba(124,92,255,.28);
     }
-    .btn.ghost{background: rgba(255,255,255,.03)}
     .pill{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:8px 12px; border-radius:999px;
-      border:1px solid var(--border);
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
       background: rgba(255,255,255,.03);
       color:var(--muted);
       font-size:13px;
     }
+
     .hero{
-      padding:34px 0 22px;
+      padding:26px 0 18px;
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:22px;
+      grid-template-columns: 1.18fr .82fr;
+      gap:16px;
       align-items:stretch;
     }
-    @media (max-width: 920px){
-      .hero{grid-template-columns: 1fr; }
-      .navlinks{display:none}
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr}
+      .links{display:none}
     }
     h1{
-      font-size:46px; line-height:1.05; margin:14px 0 10px;
-      letter-spacing:-.02em;
+      font-size:44px;
+      line-height:1.05;
+      letter-spacing:-.03em;
+      margin:14px 0 10px;
     }
-    @media (max-width: 520px){
-      h1{font-size:38px}
-    }
+    @media (max-width:520px){h1{font-size:36px}}
     .sub{
-      font-size:16px; color: var(--muted); max-width: 54ch;
+      color:var(--muted);
+      font-size:16px;
+      max-width: 60ch;
+      margin:0 0 14px;
     }
-    .heroCard{
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      padding:18px;
-      box-shadow: var(--shadow);
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:16px;
     }
-    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; margin-top:18px}
-    @media (max-width: 920px){ .grid3{grid-template-columns: 1fr} }
+    @media (max-width:980px){.grid3{grid-template-columns:1fr}}
     .card{
-      background: rgba(255,255,255,.03);
-      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid var(--line);
       border-radius: var(--radius);
       padding:16px;
+      box-shadow: var(--shadow);
     }
-    .kicker{color: #fff; font-weight:700; margin:0 0 6px}
-    .muted{color: var(--muted); margin:0}
-    section{padding:22px 0}
-    .sectionTitle{
-      font-size:24px; margin:0 0 10px;
-      letter-spacing:-.01em;
-    }
-    .twoCol{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
-    @media (max-width: 920px){ .twoCol{grid-template-columns: 1fr} }
-    .list{
-      display:flex; flex-direction:column; gap:10px; margin-top:10px;
-    }
-    .li{
-      display:flex; gap:10px;
-      border:1px solid var(--border);
+    .mini{
       background: rgba(255,255,255,.03);
-      padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:14px;
+    }
+    .kicker{font-weight:850; margin:0 0 6px}
+    .muted{color:var(--muted); margin:0}
+    section{padding:18px 0}
+    .sectionTitle{
+      font-size:24px;
+      letter-spacing:-.02em;
+      margin:0 0 10px;
+    }
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width:980px){.twoCol{grid-template-columns:1fr}}
+    .list{display:flex; flex-direction:column; gap:10px; margin-top:10px}
+    .li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px;
       border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
     }
     .check{
-      width:22px; height:22px; border-radius: 7px;
-      background: rgba(34,197,94,.15);
-      border: 1px solid rgba(34,197,94,.35);
+      width:22px;height:22px;border-radius:7px;
       display:flex; align-items:center; justify-content:center;
-      flex: 0 0 auto;
+      background: rgba(34,197,94,.16);
+      border:1px solid rgba(34,197,94,.35);
+      flex:0 0 auto;
       margin-top:2px;
     }
-    .check svg{width:14px; height:14px}
+    .check svg{width:14px;height:14px}
     .pricing{
-      display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      align-items:stretch;
     }
-    @media (max-width: 920px){ .pricing{grid-template-columns: 1fr} }
+    @media (max-width:980px){.pricing{grid-template-columns:1fr}}
     .priceCard{
-      padding:18px;
       border-radius: var(--radius);
-      border:1px solid var(--border);
+      border:1px solid var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      padding:16px;
       box-shadow: var(--shadow);
-      position:relative;
       overflow:hidden;
+      position:relative;
     }
     .tag{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:6px 10px; border-radius:999px;
-      border:1px solid var(--border);
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
       background: rgba(255,255,255,.03);
       color:var(--muted);
       font-size:12px;
+      gap:8px;
+      align-items:center;
     }
-    .bigPrice{font-size:34px; font-weight:800; margin:10px 0 4px}
-    .small{font-size:13px; color: var(--muted)}
     .highlight{
       border-color: rgba(124,92,255,.55);
-      box-shadow: 0 18px 60px rgba(124,92,255,.22);
+      box-shadow: 0 18px 64px rgba(124,92,255,.22);
+    }
+    .bigPrice{font-size:34px; font-weight:900; margin:10px 0 4px}
+    .small{font-size:13px; color:var(--muted)}
+    .payGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    @media (max-width:680px){.payGrid{grid-template-columns:1fr}}
+    .payBox{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: 16px;
+      padding:12px;
+    }
+    .qr{
+      width:100%;
+      aspect-ratio: 1/1;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      object-fit: cover;
+      display:block;
+      margin-top:10px;
+    }
+    .hint{
+      font-size:12px;
+      color: var(--muted);
+      margin-top:10px;
     }
     details{
-      border:1px solid var(--border);
+      border:1px solid var(--line);
       background: rgba(255,255,255,.03);
-      border-radius: 14px;
-      padding: 12px 12px;
+      border-radius:14px;
+      padding:12px;
     }
-    details summary{
-      cursor:pointer;
-      font-weight:650;
-      list-style:none;
-    }
+    details summary{cursor:pointer; font-weight:800; list-style:none}
     details summary::-webkit-details-marker{display:none}
     .footer{
       padding:26px 0 60px;
-      border-top:1px solid var(--border);
+      border-top:1px solid var(--line);
       color:var(--muted);
       font-size:13px;
+      margin-top:8px;
     }
     .toast{
-      position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
-      background: rgba(17,24,42,.92);
-      border:1px solid var(--border);
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(13,18,34,.92);
+      border:1px solid var(--line);
       padding:10px 12px;
       border-radius: 14px;
       box-shadow: var(--shadow);
@@ -196,139 +262,130 @@
       color: var(--text);
       font-size: 13px;
     }
-    .formRow{display:grid; grid-template-columns: 1fr; gap:10px; margin-top:10px}
-    input, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius: 14px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,.02);
-      color: var(--text);
-      outline:none;
-    }
-    input::placeholder, textarea::placeholder{color: rgba(152,162,179,.75)}
-    .note{
-      font-size:12px;
-      color: var(--muted);
-      margin-top: 10px;
-    }
+    .divider{height:1px;background:var(--line);margin:14px 0}
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <div class="nav">
+  <div class="nav">
+    <div class="navInner">
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
         <div>
-          AI Creator Mastery System™<br/>
-          <span style="font-size:12px;color:var(--muted);font-weight:600;">Beginner-to-Income AI Framework (PH)</span>
+          ChelzyAI Studio
+          <small>AI Creator Mastery System™</small>
         </div>
       </div>
-      <div class="navlinks">
+
+      <div class="links">
         <a href="#what">What You Get</a>
         <a href="#modules">Modules</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#pricing">Payment</a>
         <a href="#faq">FAQ</a>
       </div>
-      <a class="btn primary" href="#pricing">Enroll Now</a>
-    </div>
 
+      <a class="btn btnPrimary" href="#pricing">Get Access</a>
+    </div>
+  </div>
+
+  <div class="wrap">
     <!-- HERO -->
     <div class="hero">
       <div>
-        <span class="pill">⚡ For beginners • No coding • PH-friendly selling</span>
-        <h1>Kung hindi ka marunong gumamit ng AI… <span style="color:var(--danger)">maiiwan ka.</span></h1>
+        <span class="pill">⚡ Beginner-friendly • No coding • Fast execution</span>
+        <h1>Turn AI into a real skill set—<span style="color:var(--danger)">not just hype.</span></h1>
         <p class="sub">
-          Habang yung iba kumikita gamit lang cellphone + tamang prompt… ikaw ba manonood lang?
-          This is your step-by-step system for viral scripts, prompts, digital products, at selling—kahit zero followers.
+          A premium, step-by-step system for creating high-retention scripts, powerful prompt packs,
+          and a simple selling workflow. Built for creators who want clarity, speed, and results.
         </p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
-          <a class="btn primary" href="#pricing">🚀 Unlock the System</a>
-          <button class="btn ghost" onclick="copyPromo()">📩 Copy DM Promo</button>
-          <a class="btn ghost" href="#lead">🎁 Get Free Starter Prompts</a>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btnPrimary" href="#pricing">🚀 Pay & Get Access</a>
+          <button class="btn" onclick="copyDM()">📩 Copy DM Promo</button>
+          <a class="btn" href="#modules">📚 View Modules</a>
         </div>
 
         <div class="grid3">
-          <div class="card">
-            <p class="kicker">Viral Scripts</p>
-            <p class="muted">Hooks, story loops, U-turn scripts—ready templates.</p>
+          <div class="mini">
+            <p class="kicker">High-retention Scripts</p>
+            <p class="muted">Hooks, open loops, pattern interrupts, U-turns.</p>
           </div>
-          <div class="card">
+          <div class="mini">
             <p class="kicker">Prompt Library</p>
-            <p class="muted">Copy-paste prompts to create content & offers fast.</p>
+            <p class="muted">Copy-paste prompts for content, offers, and selling.</p>
           </div>
-          <div class="card">
-            <p class="kicker">Selling System</p>
-            <p class="muted">Comment-to-DM + simple landing page funnel.</p>
+          <div class="mini">
+            <p class="kicker">Simple Selling System</p>
+            <p class="muted">Turn content into conversations → conversions.</p>
           </div>
         </div>
       </div>
 
-      <div class="heroCard">
-        <div class="tag">🔥 “Not hype. System.”</div>
-        <h3 style="margin:10px 0 6px; font-size:20px; letter-spacing:-.01em;">What changes after this?</h3>
+      <div class="card">
+        <div class="tag">✅ What you’ll walk away with</div>
         <div class="list">
           <div class="li">
             <div class="check" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <div>
-              <div style="font-weight:700">May direction ka na.</div>
-              <div class="muted" style="font-size:13px;">No more “ano ba dapat i-post?”</div>
+              <div style="font-weight:850;">A repeatable content system</div>
+              <div class="muted" style="font-size:13px;">No more “what do I post?”</div>
             </div>
           </div>
+
           <div class="li">
             <div class="check" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <div>
-              <div style="font-weight:700">May templates ka na.</div>
-              <div class="muted" style="font-size:13px;">Scripts + prompts na plug-and-play.</div>
+              <div style="font-weight:850;">Templates you can reuse daily</div>
+              <div class="muted" style="font-size:13px;">Scripts + prompts, plug-and-play.</div>
             </div>
           </div>
+
           <div class="li">
             <div class="check" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <div>
-              <div style="font-weight:700">May selling system ka.</div>
-              <div class="muted" style="font-size:13px;">From content → offer → sale.</div>
+              <div style="font-weight:850;">A clear path to selling</div>
+              <div class="muted" style="font-size:13px;">From content → offer → payment.</div>
             </div>
           </div>
         </div>
 
-        <div style="margin-top:14px; padding:12px; border-radius:14px; border:1px solid var(--border); background: rgba(255,255,255,.02)">
-          <div style="font-weight:800; font-size:14px">Quick CTA Script (Copy)</div>
-          <div class="muted" style="font-size:13px; margin-top:6px">
-            “Comment <b>AI</b> and I’ll send you the free starter prompts + the full system link.”
-          </div>
-        </div>
+        <div class="divider"></div>
 
-        <p class="note">Note: Results depend on execution. This teaches systems + templates.</p>
+        <div style="font-weight:900;">Quick CTA you can post today:</div>
+        <div class="muted" style="margin-top:6px;">
+          “Comment <b>AI</b> and I’ll send you the access link + free starter prompts.”
+        </div>
       </div>
     </div>
 
     <!-- WHAT -->
     <section id="what">
       <h2 class="sectionTitle">What you get inside</h2>
+
       <div class="twoCol">
         <div class="card">
-          <p class="kicker">✅ Templates & Systems</p>
-          <p class="muted">Hook formulas, U-turn scripts, content frameworks, sales copy, at offer templates.</p>
+          <p class="kicker">✅ Systems + Templates</p>
+          <p class="muted">Everything structured so you can execute fast.</p>
           <div class="list">
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Viral Script Pack</b><div class="muted" style="font-size:13px">Short-form scripts for Reels/TikTok</div></div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Offer Builder</b><div class="muted" style="font-size:13px">Turn skills into a paid offer</div></div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Comment-to-DM Funnel</b><div class="muted" style="font-size:13px">Simple selling system</div></div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Short-form script templates</b><div class="muted" style="font-size:13px">Retention-focused hook → loop → payoff.</div></div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Offer builder framework</b><div class="muted" style="font-size:13px">Create a clear paid offer people understand.</div></div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Comment-to-DM selling flow</b><div class="muted" style="font-size:13px">Simple conversion script + structure.</div></div></div>
           </div>
         </div>
 
         <div class="card">
           <p class="kicker">🎁 Prompt Library</p>
-          <p class="muted">Copy-paste prompts to create content, sell, and build digital products faster.</p>
+          <p class="muted">Copy-paste prompts you’ll use over and over.</p>
           <div class="list">
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>100 Prompt Library</b><div class="muted" style="font-size:13px">Hooks • Scripts • Sales • Offers</div></div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Prompt Framework</b><div class="muted" style="font-size:13px">How to write prompts that work</div></div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Real PH examples</b><div class="muted" style="font-size:13px">Tagalog-English tone</div></div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Hooks, scripts, sales prompts</b><div class="muted" style="font-size:13px">Built to create outputs that convert.</div></div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Prompt framework (so you can expand)</b><div class="muted" style="font-size:13px">Role + goal + constraints + format.</div></div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Beginner-friendly structure</b><div class="muted" style="font-size:13px">Clear steps, no confusing theory.</div></div></div>
           </div>
         </div>
       </div>
@@ -336,147 +393,117 @@
 
     <!-- MODULES -->
     <section id="modules">
-      <h2 class="sectionTitle">Complete course outline (module by module)</h2>
+      <h2 class="sectionTitle">Modules</h2>
+
       <div class="twoCol">
         <div class="card">
           <p class="kicker">Module 1 — AI Foundations</p>
-          <p class="muted">Beginner setup + prompt mastery.</p>
+          <p class="muted">Setup + prompt mastery (beginner-first).</p>
           <div class="list">
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>What AI is (and isn’t) + how creators use it</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Tool setup: ChatGPT + Canva workflow</div></div>
             <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Prompt anatomy: role • goal • context • constraints • output</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Assignment: 10 prompts for your niche</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Consistency system: how to get reliable outputs</div></div>
           </div>
         </div>
 
         <div class="card">
-          <p class="kicker">Module 2 — Viral Content System</p>
-          <p class="muted">Hooks + story loops + U-turn scripts.</p>
+          <p class="kicker">Module 2 — Viral Script System</p>
+          <p class="muted">Hooks + open loops + retention pacing.</p>
           <div class="list">
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>10 hook formulas (shock, contrast, dilemma, twist)</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Story loop script (open loop → reveal → CTA)</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Assignment: 5 scripts (15–45s)</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>10 proven hook formats + U-turn structure</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Template: hook → tension → payoff → CTA</div></div>
           </div>
         </div>
 
         <div class="card">
           <p class="kicker">Module 3 — Digital Product Creation</p>
-          <p class="muted">Prompt packs + mini-course packaging.</p>
+          <p class="muted">Prompt packs, mini products, packaging.</p>
           <div class="list">
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Pick a niche offer (who you help + what result)</div></div>
             <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Create your Prompt Pack (value-based prompts)</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Pricing & packaging (starter/core/bundle)</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Assignment: finish V1 of your product</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Pricing + offer tiers (starter/core/bundle)</div></div>
           </div>
         </div>
 
         <div class="card">
           <p class="kicker">Module 4 — Selling Without Followers</p>
-          <p class="muted">Content → conversation → conversion.</p>
+          <p class="muted">Conversation scripts + simple funnel flow.</p>
           <div class="list">
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Soft sell scripts + objection handling</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Comment-to-DM funnel setup</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Landing page checklist + CTA optimization</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Assignment: publish your offer page</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Objection handling scripts (copy-paste)</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Comment-to-DM conversion flow</div></div>
           </div>
         </div>
-
-        <div class="card" style="grid-column: 1 / -1;">
-          <p class="kicker">Module 5 — AI Service Business</p>
-          <p class="muted">If you want quick cashflow: offer services while building products.</p>
-          <div class="twoCol">
-            <div class="list">
-              <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Service offers: script writing, captions, repurposing</div></div>
-              <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Pricing: starter retainer packages</div></div>
-            </div>
-            <div class="list">
-              <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Outreach scripts + client onboarding</div></div>
-              <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Assignment: 10 DMs + 1 offer call</div></div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- PRICING -->
+    <!-- PRICING / PAYMENT -->
     <section id="pricing">
-      <h2 class="sectionTitle">Pricing (edit mo lang to)</h2>
+      <h2 class="sectionTitle">Payment & Access</h2>
+
       <div class="pricing">
         <div class="priceCard">
           <div class="tag">Starter</div>
           <h3 style="margin:10px 0 0">Prompt Starter Pack</h3>
           <div class="bigPrice">₱499</div>
-          <div class="small">For those who want quick wins</div>
+          <div class="small">Quick wins + ready prompts.</div>
           <div class="list">
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>50 hook prompts</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>20 sales scripts</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Copy-paste CTA templates</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Hook prompts</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Script prompts</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Simple CTA templates</div></div>
           </div>
-          <a class="btn ghost" style="width:100%; margin-top:12px" href="#" onclick="alert('Replace this link with your payment/checkout link.')">Get Starter</a>
+          <div class="hint">Tip: If you want, you can add a separate GCash/PayPal QR for Starter later.</div>
         </div>
 
         <div class="priceCard highlight">
           <div class="tag">Most Popular</div>
           <h3 style="margin:10px 0 0">AI Creator Mastery System™</h3>
           <div class="bigPrice">₱1,999</div>
-          <div class="small">Full course + systems + templates</div>
+          <div class="small">Full course + templates + prompt library.</div>
+
           <div class="list">
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>All 5 modules</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>100 prompt library</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Landing page + DM scripts</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Modules 1–4</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Prompt library + scripts</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Selling flow + templates</div></div>
           </div>
-<h4 style="margin-top:20px;">Pay via GCash</h4>
-<img src="gcash.jpg" style="width:100%; border-radius:12px; margin-top:10px;">
 
-<h4 style="margin-top:20px;">Pay via PayPal</h4>
-<img src="paypal.jpg" style="width:100%; border-radius:12px; margin-top:10px;">
+          <div class="payGrid">
+            <div class="payBox">
+              <div style="font-weight:900;">Pay via GCash</div>
+              <div class="muted" style="font-size:13px;">Scan the QR below.</div>
+              <img id="gcashQR" class="qr" alt="GCash QR code (scan to pay)" src="" />
+              <div id="gcashHint" class="hint"></div>
+            </div>
 
-<a class="btn primary" style="width:100%; margin-top:20px"
-   href="https://docs.google.com/forms/d/e/1FAIpQLSe49xPA3wRCsRppP1DzDveL7dKKXRghdPNGrpxO0bKPgZA0ag/viewform"
-   target="_blank" rel="noopener">
-  Submit Proof of Payment
-</a>
+            <div class="payBox">
+              <div style="font-weight:900;">Pay via PayPal</div>
+              <div class="muted" style="font-size:13px;">Scan the QR below.</div>
+              <img id="paypalQR" class="qr" alt="PayPal QR code (scan to pay)" src="" />
+              <div id="paypalHint" class="hint"></div>
+            </div>
+          </div>
 
-<p class="note">
-  After payment, submit the form above. Access will be sent within 24 hours.
-</p>
-          <div class="note">Tip: Replace button link with your Stripe/PayPal/Gumroad checkout.</div>
+          <a class="btn btnPrimary" style="width:100%; margin-top:14px"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSe49xPA3wRCsRppP1DzDveL7dKKXRghdPNGrpxO0bKPgZA0ag/viewform"
+             target="_blank" rel="noopener">
+            ✅ Submit Proof of Payment (Required)
+          </a>
+
+          <div class="hint">
+            After you pay, submit the form above. We will email your access within <b>24 hours</b>.
+            <br/>We never ask for OTPs or passwords.
+          </div>
         </div>
 
         <div class="priceCard">
           <div class="tag">Premium</div>
-          <h3 style="margin:10px 0 0">Mentorship / Live Training</h3>
+          <h3 style="margin:10px 0 0">Mentorship / Live Help</h3>
           <div class="bigPrice">₱4,999+</div>
-          <div class="small">If you want feedback + faster execution</div>
+          <div class="small">For faster execution with feedback.</div>
           <div class="list">
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Weekly coaching call</div></div>
-            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Review scripts + offers</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Weekly review & guidance</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Offer + script feedback</div></div>
             <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Personal plan</div></div>
           </div>
-          <a class="btn ghost" style="width:100%; margin-top:12px" href="#lead">Apply</a>
+          <div class="hint">If you want, you can add a separate Google Form for applications later.</div>
         </div>
-      </div>
-    </section>
-
-    <!-- LEAD FORM -->
-    <section id="lead">
-      <h2 class="sectionTitle">🎁 Free Starter Prompts (Lead Magnet)</h2>
-      <div class="card">
-        <p class="muted" style="margin:0 0 8px">
-          Ilagay mo email mo para ma-send ko yung free starter prompts + quick guide.
-        </p>
-
-        <!-- OPTION A: Formspree (easy). Replace "YOUR_FORMSPREE_ID" -->
-        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-          <div class="formRow">
-            <input name="name" placeholder="Name" required />
-            <input type="email" name="email" placeholder="Email" required />
-            <textarea name="message" placeholder="Anong goal mo? (optional)"></textarea>
-          </div>
-          <button class="btn primary" style="margin-top:12px" type="submit">Send me the free prompts</button>
-          <p class="note">Replace <b>YOUR_FORMSPREE_ID</b> with your Formspree form ID. If you don’t want email capture yet, delete this section.</p>
-        </form>
       </div>
     </section>
 
@@ -485,35 +512,37 @@
       <h2 class="sectionTitle">FAQ</h2>
       <div class="twoCol">
         <details open>
-          <summary>Beginner ako. Kaya ko ba?</summary>
-          <div class="muted" style="margin-top:8px">Yes. Step-by-step ito. May templates para di ka maligaw.</div>
+          <summary>How do I get access after paying?</summary>
+          <div class="muted" style="margin-top:8px">
+            Pay using GCash or PayPal, then click <b>Submit Proof of Payment</b> and fill out the form.
+            You’ll receive access by email within 24 hours.
+          </div>
         </details>
         <details>
-          <summary>Kailangan ba tech savvy?</summary>
-          <div class="muted" style="margin-top:8px">Hindi. Basic tools lang. Focus tayo sa prompts + systems.</div>
+          <summary>Do I need to be tech-savvy?</summary>
+          <div class="muted" style="margin-top:8px">No. This is built for beginners with templates and step-by-step execution.</div>
         </details>
         <details>
-          <summary>Paano ako kikita kung wala akong followers?</summary>
-          <div class="muted" style="margin-top:8px">Ituturo ko comment-to-DM funnel + simple offer + landing page.</div>
+          <summary>Is this a “get rich quick” program?</summary>
+          <div class="muted" style="margin-top:8px">No. It’s a skills + systems program. Results depend on consistent execution.</div>
         </details>
         <details>
-          <summary>May refund ba?</summary>
-          <div class="muted" style="margin-top:8px">Optional: You can add your refund policy here (ex: 7-day). If ayaw mo, remove.</div>
+          <summary>Security note</summary>
+          <div class="muted" style="margin-top:8px">We never ask for OTPs, passwords, or remote access. Keep your receipts.</div>
         </details>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <div class="footer">
-      <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
-        <div>© <span id="yr"></span> AI Creator Mastery System™</div>
-        <div style="display:flex; gap:12px">
-          <a href="#pricing">Pricing</a>
-          <a href="#lead">Free Prompts</a>
-          <a href="#" onclick="alert('Add your privacy policy link here.')">Privacy</a>
+      <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <div>© <span id="yr"></span> ChelzyAI Studio</div>
+        <div style="display:flex; gap:12px;">
+          <a href="#pricing">Payment</a>
+          <a href="#modules">Modules</a>
+          <a href="#faq">FAQ</a>
         </div>
       </div>
-      <p style="margin-top:10px">Disclaimer: This is an education program. Results depend on your effort, execution, and consistency.</p>
+      <p style="margin-top:10px;">Disclaimer: This is an education program. Results vary based on effort and execution.</p>
     </div>
   </div>
 
@@ -527,13 +556,69 @@
       t.textContent = msg;
       t.style.display = "block";
       clearTimeout(window.__t);
-      window.__t = setTimeout(()=>{ t.style.display="none"; }, 2500);
+      window.__t = setTimeout(()=>{ t.style.display="none"; }, 2600);
     }
 
-    function copyPromo(){
-      const msg = `Hi! If you want the FREE AI starter prompts + the full AI Creator Mastery System link, comment "AI" or DM me "AI".`;
-      navigator.clipboard.writeText(msg).then(()=>toast("Copied promo message ✅"));
+    function copyDM(){
+      const msg = `Hey! If you want the AI Creator Mastery System access, pay via GCash/PayPal on my site, then submit proof. Comment "AI" and I’ll send the link.`;
+      navigator.clipboard.writeText(msg).then(()=>toast("DM promo copied ✅"));
     }
+
+    // ✅ Auto-detect QR image files in your repo so you don't need to rename.
+    // It tries common filenames + also tries URL-encoded names with spaces.
+    async function pickFirstExisting(candidates) {
+      for (const c of candidates) {
+        try {
+          const res = await fetch(c, { method: "GET", cache: "no-store" });
+          if (res.ok) return c;
+        } catch (e) {}
+      }
+      return null;
+    }
+
+    (async function initQR(){
+      const gcashEl = document.getElementById("gcashQR");
+      const paypalEl = document.getElementById("paypalQR");
+      const gcashHint = document.getElementById("gcashHint");
+      const paypalHint = document.getElementById("paypalHint");
+
+      // Add your likely filenames here; the script will pick the first that exists.
+      // If your images have spaces in the name, URL-encoding is required: space => %20
+      const gcashCandidates = [
+        "gcash.jpg","gcash.jpeg","gcash.png",
+        "GCASH.jpg","GCASH.png",
+        "gcash-qr.jpg","gcash-qr.png",
+        "kaye%20chelzy%20opimo.jpg","kaye%20chelzy%20opimo.png",
+        "kaye%20chelzy%20opimo%202.jpg","kaye%20chelzy%20opimo%202.png"
+      ];
+
+      const paypalCandidates = [
+        "paypal.jpg","paypal.jpeg","paypal.png",
+        "PAYPAL.jpg","PAYPAL.png",
+        "paypal-qr.jpg","paypal-qr.png",
+        "pay%20pal.jpg","pay%20pal.png",
+        "kaye%20chelzy%20opimo%20paypal.jpg","kaye%20chelzy%20opimo%20paypal.png"
+      ];
+
+      const gcashFile = await pickFirstExisting(gcashCandidates);
+      const paypalFile = await pickFirstExisting(paypalCandidates);
+
+      if (gcashFile) {
+        gcashEl.src = gcashFile;
+        gcashHint.textContent = "If the QR looks blurry, open the image in a new tab and zoom in before scanning.";
+      } else {
+        gcashEl.style.display = "none";
+        gcashHint.innerHTML = "GCash QR not found in the repository. Upload your GCash QR image to this repo (same folder as index.html).";
+      }
+
+      if (paypalFile) {
+        paypalEl.src = paypalFile;
+        paypalHint.textContent = "If the QR looks blurry, open the image in a new tab and zoom in before scanning.";
+      } else {
+        paypalEl.style.display = "none";
+        paypalHint.innerHTML = "PayPal QR not found in the repository. Upload your PayPal QR image to this repo (same folder as index.html).";
+      }
+    })();
   </script>
 </body>
 </html>
