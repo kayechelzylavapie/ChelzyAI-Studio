@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Creator Mastery System™</title>
+  <meta name="description" content="Step-by-step AI system for beginners in the Philippines: viral scripts, prompts, digital products, and selling—no tech skills needed."/>
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --card:#11182a;
+      --muted:#98a2b3;
+      --text:#e6e8ee;
+      --accent:#7c5cff;
+      --accent2:#22c55e;
+      --danger:#fb7185;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 15% 10%, rgba(124,92,255,.20), transparent 55%),
+                  radial-gradient(900px 600px at 80% 20%, rgba(34,197,94,.14), transparent 55%),
+                  radial-gradient(800px 600px at 50% 90%, rgba(251,113,133,.10), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      position:sticky; top:0; backdrop-filter: blur(12px);
+      background: linear-gradient(to bottom, rgba(11,15,25,.82), rgba(11,15,25,.35));
+      border-bottom:1px solid var(--border);
+      z-index:50;
+    }
+    .brand{display:flex; gap:12px; align-items:center; font-weight:700}
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 30px rgba(124,92,255,.25);
+    }
+    .navlinks{display:flex; gap:16px; align-items:center; color:var(--muted); font-size:14px}
+    .navlinks a{opacity:.9; text-decoration:none}
+    .navlinks a:hover{opacity:1; color:#fff}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:14px;
+      border:1px solid var(--border);
+      text-decoration:none; font-weight:650;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      gap:10px;
+      cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.22)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(34,197,94,.95));
+      border-color: transparent;
+      box-shadow: 0 18px 50px rgba(124,92,255,.28);
+    }
+    .btn.ghost{background: rgba(255,255,255,.03)}
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .hero{
+      padding:34px 0 22px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){
+      .hero{grid-template-columns: 1fr; }
+      .navlinks{display:none}
+    }
+    h1{
+      font-size:46px; line-height:1.05; margin:14px 0 10px;
+      letter-spacing:-.02em;
+    }
+    @media (max-width: 520px){
+      h1{font-size:38px}
+    }
+    .sub{
+      font-size:16px; color: var(--muted); max-width: 54ch;
+    }
+    .heroCard{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; margin-top:18px}
+    @media (max-width: 920px){ .grid3{grid-template-columns: 1fr} }
+    .card{
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:16px;
+    }
+    .kicker{color: #fff; font-weight:700; margin:0 0 6px}
+    .muted{color: var(--muted); margin:0}
+    section{padding:22px 0}
+    .sectionTitle{
+      font-size:24px; margin:0 0 10px;
+      letter-spacing:-.01em;
+    }
+    .twoCol{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    @media (max-width: 920px){ .twoCol{grid-template-columns: 1fr} }
+    .list{
+      display:flex; flex-direction:column; gap:10px; margin-top:10px;
+    }
+    .li{
+      display:flex; gap:10px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      padding:12px 12px;
+      border-radius: 14px;
+    }
+    .check{
+      width:22px; height:22px; border-radius: 7px;
+      background: rgba(34,197,94,.15);
+      border: 1px solid rgba(34,197,94,.35);
+      display:flex; align-items:center; justify-content:center;
+      flex: 0 0 auto;
+      margin-top:2px;
+    }
+    .check svg{width:14px; height:14px}
+    .pricing{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
+    }
+    @media (max-width: 920px){ .pricing{grid-template-columns: 1fr} }
+    .priceCard{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .tag{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .bigPrice{font-size:34px; font-weight:800; margin:10px 0 4px}
+    .small{font-size:13px; color: var(--muted)}
+    .highlight{
+      border-color: rgba(124,92,255,.55);
+      box-shadow: 0 18px 60px rgba(124,92,255,.22);
+    }
+    details{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      padding: 12px 12px;
+    }
+    details summary{
+      cursor:pointer;
+      font-weight:650;
+      list-style:none;
+    }
+    details summary::-webkit-details-marker{display:none}
+    .footer{
+      padding:26px 0 60px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .toast{
+      position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+      background: rgba(17,24,42,.92);
+      border:1px solid var(--border);
+      padding:10px 12px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      display:none;
+      z-index:99;
+      max-width: 92vw;
+      color: var(--text);
+      font-size: 13px;
+    }
+    .formRow{display:grid; grid-template-columns: 1fr; gap:10px; margin-top:10px}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.02);
+      color: var(--text);
+      outline:none;
+    }
+    input::placeholder, textarea::placeholder{color: rgba(152,162,179,.75)}
+    .note{
+      font-size:12px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          AI Creator Mastery System™<br/>
+          <span style="font-size:12px;color:var(--muted);font-weight:600;">Beginner-to-Income AI Framework (PH)</span>
+        </div>
+      </div>
+      <div class="navlinks">
+        <a href="#what">What You Get</a>
+        <a href="#modules">Modules</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a class="btn primary" href="#pricing">Enroll Now</a>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div>
+        <span class="pill">⚡ For beginners • No coding • PH-friendly selling</span>
+        <h1>Kung hindi ka marunong gumamit ng AI… <span style="color:var(--danger)">maiiwan ka.</span></h1>
+        <p class="sub">
+          Habang yung iba kumikita gamit lang cellphone + tamang prompt… ikaw ba manonood lang?
+          This is your step-by-step system for viral scripts, prompts, digital products, at selling—kahit zero followers.
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
+          <a class="btn primary" href="#pricing">🚀 Unlock the System</a>
+          <button class="btn ghost" onclick="copyPromo()">📩 Copy DM Promo</button>
+          <a class="btn ghost" href="#lead">🎁 Get Free Starter Prompts</a>
+        </div>
+
+        <div class="grid3">
+          <div class="card">
+            <p class="kicker">Viral Scripts</p>
+            <p class="muted">Hooks, story loops, U-turn scripts—ready templates.</p>
+          </div>
+          <div class="card">
+            <p class="kicker">Prompt Library</p>
+            <p class="muted">Copy-paste prompts to create content & offers fast.</p>
+          </div>
+          <div class="card">
+            <p class="kicker">Selling System</p>
+            <p class="muted">Comment-to-DM + simple landing page funnel.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="heroCard">
+        <div class="tag">🔥 “Not hype. System.”</div>
+        <h3 style="margin:10px 0 6px; font-size:20px; letter-spacing:-.01em;">What changes after this?</h3>
+        <div class="list">
+          <div class="li">
+            <div class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:700">May direction ka na.</div>
+              <div class="muted" style="font-size:13px;">No more “ano ba dapat i-post?”</div>
+            </div>
+          </div>
+          <div class="li">
+            <div class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:700">May templates ka na.</div>
+              <div class="muted" style="font-size:13px;">Scripts + prompts na plug-and-play.</div>
+            </div>
+          </div>
+          <div class="li">
+            <div class="check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div style="font-weight:700">May selling system ka.</div>
+              <div class="muted" style="font-size:13px;">From content → offer → sale.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px; padding:12px; border-radius:14px; border:1px solid var(--border); background: rgba(255,255,255,.02)">
+          <div style="font-weight:800; font-size:14px">Quick CTA Script (Copy)</div>
+          <div class="muted" style="font-size:13px; margin-top:6px">
+            “Comment <b>AI</b> and I’ll send you the free starter prompts + the full system link.”
+          </div>
+        </div>
+
+        <p class="note">Note: Results depend on execution. This teaches systems + templates.</p>
+      </div>
+    </div>
+
+    <!-- WHAT -->
+    <section id="what">
+      <h2 class="sectionTitle">What you get inside</h2>
+      <div class="twoCol">
+        <div class="card">
+          <p class="kicker">✅ Templates & Systems</p>
+          <p class="muted">Hook formulas, U-turn scripts, content frameworks, sales copy, at offer templates.</p>
+          <div class="list">
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Viral Script Pack</b><div class="muted" style="font-size:13px">Short-form scripts for Reels/TikTok</div></div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Offer Builder</b><div class="muted" style="font-size:13px">Turn skills into a paid offer</div></div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Comment-to-DM Funnel</b><div class="muted" style="font-size:13px">Simple selling system</div></div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="kicker">🎁 Prompt Library</p>
+          <p class="muted">Copy-paste prompts to create content, sell, and build digital products faster.</p>
+          <div class="list">
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>100 Prompt Library</b><div class="muted" style="font-size:13px">Hooks • Scripts • Sales • Offers</div></div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Prompt Framework</b><div class="muted" style="font-size:13px">How to write prompts that work</div></div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><b>Real PH examples</b><div class="muted" style="font-size:13px">Tagalog-English tone</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULES -->
+    <section id="modules">
+      <h2 class="sectionTitle">Complete course outline (module by module)</h2>
+      <div class="twoCol">
+        <div class="card">
+          <p class="kicker">Module 1 — AI Foundations</p>
+          <p class="muted">Beginner setup + prompt mastery.</p>
+          <div class="list">
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>What AI is (and isn’t) + how creators use it</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Tool setup: ChatGPT + Canva workflow</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Prompt anatomy: role • goal • context • constraints • output</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Assignment: 10 prompts for your niche</div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="kicker">Module 2 — Viral Content System</p>
+          <p class="muted">Hooks + story loops + U-turn scripts.</p>
+          <div class="list">
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>10 hook formulas (shock, contrast, dilemma, twist)</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Story loop script (open loop → reveal → CTA)</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Assignment: 5 scripts (15–45s)</div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="kicker">Module 3 — Digital Product Creation</p>
+          <p class="muted">Prompt packs + mini-course packaging.</p>
+          <div class="list">
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Pick a niche offer (who you help + what result)</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Create your Prompt Pack (value-based prompts)</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Pricing & packaging (starter/core/bundle)</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Assignment: finish V1 of your product</div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <p class="kicker">Module 4 — Selling Without Followers</p>
+          <p class="muted">Content → conversation → conversion.</p>
+          <div class="list">
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Soft sell scripts + objection handling</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Comment-to-DM funnel setup</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Landing page checklist + CTA optimization</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Assignment: publish your offer page</div></div>
+          </div>
+        </div>
+
+        <div class="card" style="grid-column: 1 / -1;">
+          <p class="kicker">Module 5 — AI Service Business</p>
+          <p class="muted">If you want quick cashflow: offer services while building products.</p>
+          <div class="twoCol">
+            <div class="list">
+              <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Service offers: script writing, captions, repurposing</div></div>
+              <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Pricing: starter retainer packages</div></div>
+            </div>
+            <div class="list">
+              <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Outreach scripts + client onboarding</div></div>
+              <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Assignment: 10 DMs + 1 offer call</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <h2 class="sectionTitle">Pricing (edit mo lang to)</h2>
+      <div class="pricing">
+        <div class="priceCard">
+          <div class="tag">Starter</div>
+          <h3 style="margin:10px 0 0">Prompt Starter Pack</h3>
+          <div class="bigPrice">₱499</div>
+          <div class="small">For those who want quick wins</div>
+          <div class="list">
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>50 hook prompts</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>20 sales scripts</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Copy-paste CTA templates</div></div>
+          </div>
+          <a class="btn ghost" style="width:100%; margin-top:12px" href="#" onclick="alert('Replace this link with your payment/checkout link.')">Get Starter</a>
+        </div>
+
+        <div class="priceCard highlight">
+          <div class="tag">Most Popular</div>
+          <h3 style="margin:10px 0 0">AI Creator Mastery System™</h3>
+          <div class="bigPrice">₱1,999</div>
+          <div class="small">Full course + systems + templates</div>
+          <div class="list">
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>All 5 modules</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>100 prompt library</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Landing page + DM scripts</div></div>
+          </div>
+          <a class="btn primary" style="width:100%; margin-top:12px" href="#" onclick="alert('Replace this link with your payment/checkout link.')">Enroll Now</a>
+          <div class="note">Tip: Replace button link with your Stripe/PayPal/Gumroad checkout.</div>
+        </div>
+
+        <div class="priceCard">
+          <div class="tag">Premium</div>
+          <h3 style="margin:10px 0 0">Mentorship / Live Training</h3>
+          <div class="bigPrice">₱4,999+</div>
+          <div class="small">If you want feedback + faster execution</div>
+          <div class="list">
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Weekly coaching call</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Review scripts + offers</div></div>
+            <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Personal plan</div></div>
+          </div>
+          <a class="btn ghost" style="width:100%; margin-top:12px" href="#lead">Apply</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEAD FORM -->
+    <section id="lead">
+      <h2 class="sectionTitle">🎁 Free Starter Prompts (Lead Magnet)</h2>
+      <div class="card">
+        <p class="muted" style="margin:0 0 8px">
+          Ilagay mo email mo para ma-send ko yung free starter prompts + quick guide.
+        </p>
+
+        <!-- OPTION A: Formspree (easy). Replace "YOUR_FORMSPREE_ID" -->
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <div class="formRow">
+            <input name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <textarea name="message" placeholder="Anong goal mo? (optional)"></textarea>
+          </div>
+          <button class="btn primary" style="margin-top:12px" type="submit">Send me the free prompts</button>
+          <p class="note">Replace <b>YOUR_FORMSPREE_ID</b> with your Formspree form ID. If you don’t want email capture yet, delete this section.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2 class="sectionTitle">FAQ</h2>
+      <div class="twoCol">
+        <details open>
+          <summary>Beginner ako. Kaya ko ba?</summary>
+          <div class="muted" style="margin-top:8px">Yes. Step-by-step ito. May templates para di ka maligaw.</div>
+        </details>
+        <details>
+          <summary>Kailangan ba tech savvy?</summary>
+          <div class="muted" style="margin-top:8px">Hindi. Basic tools lang. Focus tayo sa prompts + systems.</div>
+        </details>
+        <details>
+          <summary>Paano ako kikita kung wala akong followers?</summary>
+          <div class="muted" style="margin-top:8px">Ituturo ko comment-to-DM funnel + simple offer + landing page.</div>
+        </details>
+        <details>
+          <summary>May refund ba?</summary>
+          <div class="muted" style="margin-top:8px">Optional: You can add your refund policy here (ex: 7-day). If ayaw mo, remove.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap">
+        <div>© <span id="yr"></span> AI Creator Mastery System™</div>
+        <div style="display:flex; gap:12px">
+          <a href="#pricing">Pricing</a>
+          <a href="#lead">Free Prompts</a>
+          <a href="#" onclick="alert('Add your privacy policy link here.')">Privacy</a>
+        </div>
+      </div>
+      <p style="margin-top:10px">Disclaimer: This is an education program. Results depend on your effort, execution, and consistency.</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    function toast(msg){
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.style.display = "block";
+      clearTimeout(window.__t);
+      window.__t = setTimeout(()=>{ t.style.display="none"; }, 2500);
+    }
+
+    function copyPromo(){
+      const msg = `Hi! If you want the FREE AI starter prompts + the full AI Creator Mastery System link, comment "AI" or DM me "AI".`;
+      navigator.clipboard.writeText(msg).then(()=>toast("Copied promo message ✅"));
+    }
+  </script>
+</body>
+</html>
