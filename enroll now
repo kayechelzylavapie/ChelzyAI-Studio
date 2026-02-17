@@ -426,7 +426,21 @@
             <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>100 prompt library</div></div>
             <div class="li"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2"/></svg></div><div>Landing page + DM scripts</div></div>
           </div>
-          <a class="btn primary" style="width:100%; margin-top:12px" href="#" onclick="alert('Replace this link with your payment/checkout link.')">Enroll Now</a>
+<h4 style="margin-top:20px;">Pay via GCash</h4>
+<img src="gcash.jpg" style="width:100%; border-radius:12px; margin-top:10px;">
+
+<h4 style="margin-top:20px;">Pay via PayPal</h4>
+<img src="paypal.jpg" style="width:100%; border-radius:12px; margin-top:10px;">
+
+<a class="btn primary" style="width:100%; margin-top:20px"
+   href="https://docs.google.com/forms/d/e/1FAIpQLSe49xPA3wRCsRppP1DzDveL7dKKXRghdPNGrpxO0bKPgZA0ag/viewform"
+   target="_blank" rel="noopener">
+  Submit Proof of Payment
+</a>
+
+<p class="note">
+  After payment, submit the form above. Access will be sent within 24 hours.
+</p>
           <div class="note">Tip: Replace button link with your Stripe/PayPal/Gumroad checkout.</div>
         </div>
 
